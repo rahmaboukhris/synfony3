@@ -1,0 +1,19 @@
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
+
+genus_lists:
+  path: /genus
+  defaults: {_controller: AppBundle:Genus:list }
+
+genus_new:
+  path: /genus/new
+  defaults: { _controller: AppBundle:Genus:new }
+
+genus_show:
+  path: /genus/{genusName}
+  defaults: { _controller: AppBundle:Genus:show }
+
+genus_show_notes:
+  path: /genus/{name}/notes
+  defaults: { _controller: AppBundle:Genus:getNotes }

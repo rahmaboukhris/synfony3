@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% for flashmessage in app.session.flashBag.get('error') %}
+            {{ flashmessage }}
+        {% endfor %}
+        <h1>404 Not found</h1>
+    </div>
+
+{% endblock %}
