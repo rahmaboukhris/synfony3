@@ -17,3 +17,11 @@ genus_show:
 genus_show_notes:
   path: /genus/{name}/notes
   defaults: { _controller: AppBundle:Genus:getNotes }
+
+admin_genus_list:
+  path: /admin/genus
+  defaults: { _controller: AppBundle:Admin\GenusAdmin:index }
+
+admin_genus_new:
+  path: /admin/genus/new
+  defaults: { _controller: AppBundle:Admin\GenusAdmin:new }
