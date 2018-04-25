@@ -73,7 +73,8 @@ class GenusController extends Controller
             return $note->getCreatedAt() > new \DateTime('-3 months');
         });*/
 
-        $transformer = new MarkdownTransformer($this->get('markdown.parser'));
+//        $transformer = new MarkdownTransformer($this->get('markdown.parser'));
+        $transformer = $this->get('app.markdown_transformer');
         $funfact = $transformer->parse($genus->getFunFact());
 
 
