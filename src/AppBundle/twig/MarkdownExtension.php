@@ -14,6 +14,7 @@ use AppBundle\Service\MarkdownTransformer;
 class MarkdownExtension extends \Twig_Extension
 {
     private $markdownTransformer;
+
     public function __construct(MarkdownTransformer $markdownTransformer)
     {
         $this->markdownTransformer = $markdownTransformer;
