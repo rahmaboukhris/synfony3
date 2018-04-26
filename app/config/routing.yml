@@ -25,3 +25,7 @@ admin_genus_list:
 admin_genus_new:
   path: /admin/genus/new
   defaults: { _controller: AppBundle:Admin\GenusAdmin:new }
+
+admin_genus_edit:
+  path: /admin/genus/{id}/edit
+  defaults: { _controller: AppBundle:Admin\GenusAdmin:edit }

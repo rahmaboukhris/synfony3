@@ -32,11 +32,12 @@ class GenusFormType extends AbstractType
                 ]
             ])
             ->add('firstDiscoveredAt', DateType::class, [
+                'placeholder' => 'yyyy-mm-dd',
                 'widget' => 'single_text',
                 'attr' => [
                     'class' => 'js-datepicker'
                 ],
-                'html5' => false
+                'html5' => false,
             ])
         ;
     }
