@@ -38,6 +38,14 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $password;
+
+
+    private $plainPassword;
+
     public function getUsername()
     {
         return $this->email;
@@ -58,7 +66,7 @@ class User implements UserInterface
 
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return $this->password;
     }
 
     public function getSalt()
@@ -66,12 +74,34 @@ class User implements UserInterface
         // TODO: Implement getSalt() method.
     }
 
-
-
-
-
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+        $this->plainPassword = null;
     }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        // need to change any property to execute the listener
+        // so password needed to be null as password is not set yet
+        $this->password = null;
+    }
+
+
+
+
 }
