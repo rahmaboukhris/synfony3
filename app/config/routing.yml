@@ -41,3 +41,7 @@ security_logout:
 homepage:
   path: /
   defaults: { _controller: AppBundle:Default:index }
+
+user_register:
+  path: /register
+  defaults: { _controller: AppBundle:User:register }
